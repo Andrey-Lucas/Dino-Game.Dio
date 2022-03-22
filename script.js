@@ -58,7 +58,12 @@ function createCactus() {
       // Game over
       clearInterval(leftTimer);
       isGameOver = true;
-      document.body.innerHTML = '<h1 class="game-over">Fim de jogo</h1>';
+      document.body.innerHTML = '<h1 class="game-over">Game Over</br><button id="refresh"><input type="image" src="pngegg.png" style="border:radius;" height="80" width="170"/></button></h1>'
+      var btn = document.querySelector("#refresh");
+btn.addEventListener("click", function() {
+    
+    location.reload();
+});
     } else {
       cactusPosition -= 10;
       cactus.style.left = cactusPosition + 'px';
@@ -70,3 +75,5 @@ function createCactus() {
 
 createCactus();
 document.addEventListener('keyup', handleKeyUp);
+ 
+
